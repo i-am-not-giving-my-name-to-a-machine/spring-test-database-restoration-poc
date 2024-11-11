@@ -1,0 +1,5 @@
+databaseChangeLog:
+- objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+- includeAll:
+    path: changelog
+    relativeToChangelogFile: true

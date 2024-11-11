@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:h2:memFS:working-copy;DB_CLOSE_DELAY=-1;INIT=create schema if not exists test\;set schema test
+      minimum-idle: 0
+      maximum-pool-size: 10
+  liquibase:
+    url: jdbc:h2:memFS:golden-copy;INIT=create schema if not exists test\;set schema test
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate.dialect: org.hibernate.dialect.H2Dialect

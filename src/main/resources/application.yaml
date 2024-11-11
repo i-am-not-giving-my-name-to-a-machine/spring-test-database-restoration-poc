@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: Test
+  datasource:
+    hikari:
+      jdbc-url: jdbc:h2:file:./test-database;AUTO_SERVER=true;INIT=create schema if not exists test\;set schema test
+      username: sa
+      password: sa
+      minimum-idle: 5
+      maximum-pool-size: 10
+  liquibase:
+    enabled: true
+    url: ${spring.datasource.hikari.jdbc-url}
+    user: ${spring.datasource.hikari.username}
+    password: ${spring.datasource.hikari.password}
+    change-log: classpath:db/db.changelog-master.yaml
+    drop-first: false
+    parameters:
+      db.name: test

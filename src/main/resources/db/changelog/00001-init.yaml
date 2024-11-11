@@ -1,0 +1,25 @@
+databaseChangeLog:
+- changeSet:
+    id: 00001-1
+    author: strohmattenverleger
+    changes:
+    - createTable:
+        tableName: user_
+        columns:
+        - column:
+            name: id_
+            type: varchar
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_user
+        - column:
+            name: name_
+            type: varchar
+            constraints:
+              nullable: false
+        - column:
+            name: email
+            type: varchar
+            constraints:
+              nullable: false
